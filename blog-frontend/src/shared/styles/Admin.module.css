@@ -1,0 +1,159 @@
+.blogsContainer {
+    width: 60vw
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-color);
+    border-radius: 8px;
+    border: 2px solid var(--text-color);
+    padding: 40px 40px
+
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    margin-right: 450px;
+    border-bottom: 0.5px solid var(--text-color);
+    padding-bottom: 20px;
+}
+
+.button {
+    cursor: pointer;
+    padding: 10px 15px;
+    outline: 2px solid var(--text-color);
+    border-radius: 8px;
+    background-color: var(--dark-color);
+    color: var(--text-color);
+    opacity: 0.65;
+}
+
+.active {
+    font-weight: bold;
+    outline: 2px solid var(--accent-color);
+    background-color: var(--text-color);
+    color: var(--dark-color);
+    opacity: 1;
+
+}
+
+.blog {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid var(--text-color);
+}
+
+.date {
+    font-size: 12px;
+    margin-left: 20px;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.toggleContainer {
+    margin-left: auto;
+
+}
+
+.toggle {
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(224, 224, 224);
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.red {
+    background-color: rgb(196, 66, 26);
+}
+
+.green {
+    background-color: rgb(34, 154, 34);
+}
+
+.message {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(228, 194, 0);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.inputText {
+    all: unset;
+    width: clamp(50px, 30vw, 800px);
+    background-color: var(--text-color);
+    color: var(--dark-color);
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin: 10px 0;
+    caret-color: var(--dark-color);
+}
+
+.inputText:focus {
+    outline: 2px solid var(--accent-color);
+  box-shadow: none;
+}
+
+.textArea {
+    all: unset;
+    border-radius: 8px;
+    color: var(--dark-color);
+    background-color: var(--text-color);
+    height: clamp(50px, 30vh, 800px);
+    width: clamp(50px, 30vw, 800px);
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.textArea:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+ .formButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 8px;
+    border-radius: 8px;
+    margin: 10px 0;
+ }
+
+ .inputButton {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+ }
+
+.submitButton {
+    all: unset;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: var(--text-color);
+    color: var(--dark-color);
+    opacity: 1;
+}
+
+.submitButton:active {
+    border: 2px solid var(--accent-color);
+    background-color: var(--dark-color);
+    color: var(--text-color);
+}
