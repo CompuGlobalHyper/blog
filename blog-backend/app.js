@@ -23,8 +23,9 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.use(cookieParser())
+const clientUrl = process.env.CLIENT_URL
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: clientUrl,
   credentials: true
 }))
 
@@ -72,7 +73,8 @@ passport.use(new JwtStrategy(
 
 app.use(routes)
 
-app.listen(3000, (error) => {
+const PORT = process.env.PORT || 3000
+app.listen(PORT, (error) => {
   if (error) {
     throw error;
   }

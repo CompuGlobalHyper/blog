@@ -4,10 +4,12 @@ import styles from '../styles/NavBar.module.css'
 import { useNavigate } from 'react-router'
 
 export default function NavBar({authUser}) {
+    const API = import.meta.env.VITE_API_URL
+
     const navigate = useNavigate()
 
     const handleLogout = async () => {
-        const res = await fetch("http://localhost:3000/logout", {
+        const res = await fetch(`${API}/logout`, {
             method: "GET",
             credentials: "include",
         });

@@ -16,10 +16,11 @@ export default function Login() {
     }
     
     const login = async (e) => {
+        const API = import.meta.env.VITE_API_URL
         e.preventDefault()
         console.log("login triggered")
         try { 
-            const res = await fetch("http://localhost:3000/login", {
+            const res = await fetch(`${API}/login`, {
                 method: "POST",
                 credentials: "include",
                 headers: {

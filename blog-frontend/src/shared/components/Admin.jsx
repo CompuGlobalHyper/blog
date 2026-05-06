@@ -7,6 +7,7 @@ import styles from '../styles/Admin.module.css'
 import { adminAccess } from '../functions/login.js'
 
 export default function Admin() {
+    const API = import.meta.env.VITE_API_URL
     const navigate = useNavigate()
     const [viewForm, setViewForm] = useState(false)
     const [user, setUser ] = useState(null)
@@ -48,7 +49,7 @@ export default function Admin() {
             return setMessage('Please include a body..')
         }
         try {
-            const res = await fetch("http://localhost:3000/add", {
+            const res = await fetch(`${API}/add`, {
                 method: "POST",
                 credentials: "include",
                 headers: {
@@ -74,7 +75,7 @@ export default function Admin() {
     }
 
     const changePublish = async (published, id) => {
-        const res = await fetch(`http://localhost:3000/update/${id}`, {
+        const res = await fetch(`${API}/update/${id}`, {
                 method: "POST",
                 credentials: "include",
                 headers: {

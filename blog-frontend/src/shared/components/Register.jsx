@@ -10,6 +10,7 @@ export default function Register() {
   const [confirm, setConfirm] = useState('')
   const [error, setError] = useState('')
   const navigate = useNavigate()
+  const API = import.meta.env.VITE_API_URL
 
   const authMessage = (message) => {
     console.log(message)
@@ -41,7 +42,7 @@ export default function Register() {
         return
       } 
     try {
-      const res = await fetch("http://localhost:3000/register", {
+      const res = await fetch(`${API}/register`, {
         method:"POST",
         credentials: "include",
         headers: {

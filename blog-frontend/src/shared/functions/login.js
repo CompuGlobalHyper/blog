@@ -1,8 +1,12 @@
 import { redirect } from "react-router-dom";
 import { compareDesc, format } from "date-fns";
 
+const API = import.meta.env.VITE_API_URL
+
 export const authUser = async () => {
-  const res = await fetch("http://localhost:3000/me", {
+  
+
+  const res = await fetch(`${API}/me`, {
     method: "GET",
     credentials: "include",
   });
@@ -15,7 +19,7 @@ export const authUser = async () => {
 };
 
 export const fetchPosts = async () => {
-    const res = await fetch("http://localhost:3000/home", {
+    const res = await fetch(`${API}/home`, {
         metod: "GET",
         credentials: 'include'
     })
@@ -24,7 +28,7 @@ export const fetchPosts = async () => {
     return posts
 }
 export const fetchUniquePost = async (id) => {
-    const res = await fetch(`http://localhost:3000/view/${id}`, {
+    const res = await fetch(`${API}/view/${id}`, {
         method: "GET",
         credentials: "include"
     })
@@ -33,7 +37,7 @@ export const fetchUniquePost = async (id) => {
 }
 
 export async function adminAccess() {
-  const res = await fetch("http://localhost:3000/admin", {
+  const res = await fetch(`${API}/admin`, {
     method: "GET",
     credentials: "include",
   });
