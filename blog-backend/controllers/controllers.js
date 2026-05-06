@@ -32,7 +32,7 @@ export default {
             res.cookie('access_token', token, {
                 httpOnly: true,
                 secure: true,
-                sameSite: 'Strict',
+                sameSite: 'none',
                 maxAge: 600000 // 10 mins
             })
             console.log('login successful, token created')
@@ -88,7 +88,7 @@ export default {
     async logoutGet(req, res) {
         res.clearCookie("access_token", {
             httpOnly: true,
-            sameSite: "Strict", // must match how you set it
+            sameSite: "none", // must match how you set it
             secure: true,   // true in production (HTTPS)
             path: '/',
         });
