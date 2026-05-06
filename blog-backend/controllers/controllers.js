@@ -52,11 +52,13 @@ export default {
     async homeGet(req, res) {
         const userMap = await userMapFn()
         const user = req.user
+        console.log(user)
         if (!user) {
             console.log('please login')
             return res.sendStatus(403)
         }
         const posts = await client.getPosts()
+        console.log(posts)
         const postsWithUsers = posts.map(post => ({
             ...post, username: userMap[post.userId] || "Unknown"
         }))
