@@ -32,7 +32,7 @@ model Post {
   user User @relation(fields: [userId], references: [id])
   comments Comment[]
   createdAt DateTime @default(now())
-  editedAt String?
+  edittedAt String?
   published Boolean
 
 }
