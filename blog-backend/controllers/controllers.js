@@ -31,7 +31,7 @@ export default {
             }
             res.cookie('access_token', token, {
                 httpOnly: true,
-                secure: false,
+                secure: true,
                 sameSite: 'Strict',
                 maxAge: 600000 // 10 mins
             })
@@ -88,8 +88,8 @@ export default {
     async logoutGet(req, res) {
         res.clearCookie("access_token", {
             httpOnly: true,
-            sameSite: "strict", // must match how you set it
-            secure: false,   // true in production (HTTPS)
+            sameSite: "Strict", // must match how you set it
+            secure: true,   // true in production (HTTPS)
             path: '/',
         });
         console.log('logging you out..')
@@ -100,10 +100,8 @@ export default {
         if (user) {
             return res.status(200).json( { username: user.username, status: user.status })
         } else {
-            return res,status(401)
+            return res.status(401)
         }
-        
-
     },
     async initPost(req, res)  {
         const password = await bcrypt.hash('12345', 10)
