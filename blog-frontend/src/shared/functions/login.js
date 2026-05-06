@@ -20,7 +20,7 @@ export const authUser = async () => {
 
 export const fetchPosts = async () => {
     const res = await fetch(`${API}/home`, {
-        metod: "GET",
+        method: "GET",
         credentials: 'include'
     })
     const data = await res.json()
