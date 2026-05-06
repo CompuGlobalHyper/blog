@@ -18,6 +18,7 @@ export default function Home() {
         const loadPage = async () => {
             const user = await authUser()
             setUser(user)
+            console.log(user)
             const data = await fetchPosts()
             console.log(data)
             setPosts(data)
